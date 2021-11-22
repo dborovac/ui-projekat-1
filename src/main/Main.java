@@ -101,7 +101,7 @@ public class Main {
             if (analysis == 3) {
                 resultSet = statement.executeQuery(Queries.query13_3);
                 while (resultSet.next()) {
-                    System.out.println("Department ID: " + resultSet.getString("females_by_department.DepartmentID") + "\t\tProcenat zena: " + resultSet.getString("Percent women") + "\t\tNaziv odseka: " + resultSet.getString("Name"));
+                    System.out.println("Department ID: " + resultSet.getString("DepartmentID") + "\t\tProcenat zena: " + resultSet.getString("Percent women") + "\t\tIme odseka: " + resultSet.getString("Name"));
                 }
             }
             if (analysis == 4) {
