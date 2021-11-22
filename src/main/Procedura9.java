@@ -9,7 +9,7 @@ public class Procedura9 {
         callableStatement.execute();
         ResultSet resultSet = callableStatement.getResultSet();
         while (resultSet.next()) {
-            System.out.println("Kupac: " + resultSet.getString("CustomerID") + "\t\tDrzava: " + resultSet.getString("country"));
+            System.out.println("Kupac: " + resultSet.getString("CustomerID") + "\t\tDrzava: " + resultSet.getString("countrey"));
         }
         callableStatement.close();
         resultSet.close();

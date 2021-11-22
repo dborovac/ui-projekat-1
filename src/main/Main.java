@@ -45,13 +45,19 @@ public class Main {
         if (selection == 5) {
             resultSet = statement.executeQuery(Queries.query5);
             while (resultSet.next()) {
-                System.out.println("SalesPersonID: " + resultSet.getString("SalesPersonID") + "\t\tTerritoryID: " + resultSet.getString("TerritoryID") + "\t\tUkupno: " + resultSet.getString("max(broj_porudzbina)"));
+                System.out.println("TerritoryID: " + resultSet.getString("TerritoryID") + "\t\tSalesPersonID: " + resultSet.getString("SalesPersonID") + "\t\tProdatih proizvoda: " + resultSet.getString("Products sold"));
             }
         }
         if (selection == 6) {
             resultSet = statement.executeQuery(Queries.query6);
             while (resultSet.next()) {
                 System.out.println("Valuta: " + resultSet.getString("name") + "\t\tBroj koriscenja: " + resultSet.getString("counter"));
+            }
+        }
+        if (selection == 7) {
+            resultSet = statement.executeQuery(Queries.query7);
+            while (resultSet.next()) {
+                System.out.println("Region: " + resultSet.getString("region") + "\t\tBroj musterija: " + resultSet.getString("number_of_customers") + "\t\tProsecno proizvoda po musteriji: " + resultSet.getString("average_items_per_customer") + "\t\tProsecna potrosnja: " + resultSet.getString("average_spent"));
             }
         }
         if (selection == 8) {
@@ -73,7 +79,10 @@ public class Main {
             Procedura11.call(UserInput.input11(), connection);
         }
         if (selection == 12) {
-            Procedura12.call(connection);
+            resultSet = statement.executeQuery(Queries.query12);
+            while (resultSet.next()) {
+                System.out.println("Ime prodavnice: " + resultSet.getString("Name") + "\t\tBroj zaposlenih: " + resultSet.getString("Number of employees") + "\t\tNacin placanja: " + resultSet.getString("PayFrequency"));
+            }
         }
         if (selection == 13) {
             departmentAnalysis(statement);
