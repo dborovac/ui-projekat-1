@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Procedura12 {
     public static void call(Connection connection) throws SQLException {
-        CallableStatement callableStatement = connection.prepareCall("{call get_products_by_instruction_language()}");
+        CallableStatement callableStatement = connection.prepareCall("{call procedura12()}");
         callableStatement.execute();
         ResultSet resultSet = callableStatement.getResultSet();
         while (resultSet.next()) {
